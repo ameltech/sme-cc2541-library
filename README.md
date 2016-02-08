@@ -12,6 +12,10 @@ The related data transfer algorithm is described here:
 
 The library provides a transparent RX - TX transmission hiding to the user the interaction with the TI BLE Bridge protocol.
 
+Notice: 
+- To receive data from the SME a Central Application needs to Subscribe to Attribute FFF4.
+- To send data to the SME a Central Application needs to write on Attribute FFF3 accordingley to the BLE Bridge protocol.
+
 
 ## Compatible Hardware
 
@@ -53,6 +57,10 @@ This libary is [licensed](LICENSE) under the [MIT Licence](http://en.wikipedia.o
  * [@Texas Instruments Home Page](http://processors.wiki.ti.com/index.php)'s 
 [BLE Smart Wiki](http://processors.wiki.ti.com/index.php/Category:BluetoothLE)
    * Starting point for TI BLE support and documentation.
-
-
+   * 
+* [@LightBLue Home Page] (https://itunes.apple.com/it/app/lightblue/id639944780?mt=12)
+ * Useful OSX Application  to test the RX  RX/TX Data.
+ * 
+* [@B-BLE Home Page] (https://play.google.com/store/apps/details?id=com.billy.billylightblue)
+ * Useful App to test the RX/TX Data from Android smartphones.
 
