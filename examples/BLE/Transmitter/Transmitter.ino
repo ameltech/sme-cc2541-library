@@ -43,7 +43,7 @@ void loop()
     smeBle.write(str,len);
       
     SerialUSB.write("Sending : "); 
-    SerialUSB.println("  Len" : );
+    SerialUSB.println("  Len : ");
     SerialUSB.print(len, HEX);
     SerialUSB.println(" ");
 
