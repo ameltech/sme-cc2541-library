@@ -42,13 +42,11 @@ void loop()
     
     smeBle.write(str,len);
       
-    SerialUSB.write("Sending : "); 
+    SerialUSB.print("Sending : "); 
     SerialUSB.println(str);
     SerialUSB.print("  Len : ");
     SerialUSB.print(len, HEX);
     SerialUSB.println(" ");
-
-         
     ledYellowOneLight(HIGH);
     referenceTime = millis();
   } else if (isButtonTwoPressed()) {
