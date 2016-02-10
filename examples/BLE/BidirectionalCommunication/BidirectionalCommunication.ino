@@ -51,7 +51,6 @@ void setup() {
   smeBle.begin();
   
   SerialUSB.begin(115200);
- // Serial1.begin(115200);
  
   ledYellowOneLight(LOW);
   ledYellowTwoLight(LOW);
@@ -95,12 +94,10 @@ void loop()
   }
 
   if (isButtonOnePressed() && !bounce) {
-    bounce = true;
-    //BLE.write("B1 ");  
+    bounce = true; 
     char *str = "abcdefghi";
     char len = strlen(str);
-    
-    //BLE.write(len); 
+     
     smeBle.write(str,len);
       
     SerialUSB.write(str); 

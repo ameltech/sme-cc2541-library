@@ -1,7 +1,7 @@
 /*
   userButton.ino
 
-  Example to sohws how send data through the BLE module on the Smarteverything
+  Example sending data through the BLE module on the Smarteverything
 
   Created: 01/01/2016 10:32:11 PM
 
@@ -43,7 +43,8 @@ void loop()
     smeBle.write(str,len);
       
     SerialUSB.write("Sending : "); 
-    SerialUSB.println("  Len" : );
+    SerialUSB.println(str);
+    SerialUSB.print("  Len : ");
     SerialUSB.print(len, HEX);
     SerialUSB.println(" ");
 
