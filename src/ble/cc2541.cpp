@@ -16,13 +16,16 @@ Cc2541::handleRxData(uint8_t inChar)
      if (cur_dir == RX && !_rx_ready) {
          
          if (rx.idx == 2) {
-             if ((rx.data[rx.idx]  == '0xab') &&
-                 (inChar == '0xad')) {
-                     rx.idx = 1;
+             if ((rx.data[rx.idx]  == 0xab) &&
+                 (inChar == 0xad)) {
+                     //rx.idx = 1;
                      return; // rewind
              }
+
              rx.data[rx.idx] = inChar;
-             _rx_ready = true;
+             if ((inChar  != 0xab))  {
+                 _rx_ready = true;
+             }
          }  if  (rx.idx <= 1) {       
              rx.data[rx.idx++] = inChar;
          }          
@@ -61,7 +64,7 @@ Cc2541::handleRxData(uint8_t inChar)
  Cc2541::rxDataReady(void)
  {
      // read if rx data is ready
-     return (_rx_ready == true);
+     return _rx_ready;
  }
 
  /****************************************************************************/
