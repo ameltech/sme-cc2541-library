@@ -1,8 +1,18 @@
 /*
-  userButton.ino
+  Receiver.ino
 
-  Example showing Data received from the BLE module on the Smarteverything
-
+  Example demonstrating how a PC/Smartphone App (Central BLE device) can be used to 
+  drive the RGB led through the BLE module on the Smarteverything (Peripheral BLE device).
+     
+  - BLE -> Serial : Any character written by the Central device, on the writable attribute 0xFFF3, 
+                    is showed on the Arduino console.
+                    
+    NOTICE: The protocol to be used is <len> <char 1> <char 2> ... <char len>
+ 
+    Example triggering the RGB Blue led:
+        Light on  :  <02><62><31>          (0x62 and 0x31 are the ascii for 'B' and '1')
+        Light off :  <02><62><30>  
+  
   Created: 01/01/2016 10:32:11 PM
 
    Author: development

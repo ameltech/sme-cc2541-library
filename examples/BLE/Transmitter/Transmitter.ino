@@ -1,8 +1,14 @@
 /*
-  userButton.ino
+  Transmitter.ino
 
-  Example sending data through the BLE module on the Smarteverything
+  Example demonstrating how to send data the SmartEveryting (Peripheral BLE device) to a 
+  PC/Smartphone App (Central BLE device)
+  
+  Pressing Button 1 will send a string, while pressing Button 2 will send a single character.
 
+  NOTICE: Any character will be sent via BLE on the attribute 0xFFF4.
+          The Host needs to subscribe to 0xFFF4 attribute to get notified.
+ 
   Created: 01/01/2016 10:32:11 PM
 
    Author: development
@@ -14,10 +20,10 @@
 
 
 char led;
-bool bounce = false;
 long referenceTime;
+bool bounce = false;
 
-
+char *str = "abcdefghi";
 
 // the setup function runs once when you press reset or power the board
 void setup() 
@@ -25,21 +31,20 @@ void setup()
   smeBle.begin();
   
   SerialUSB.begin(115200);
-
-  // LED & User Button are already initialized by the SME core.
-  // it is not required to do here
+  ledYellowOneLight(LOW);
+  ledYellowTwoLight(LOW);
   
 }
+
 
 // the loop function runs over and over again forever
 void loop() 
 {
 
-  if (isButtonOnePressed()) {
+  if (isButtonOnePressed() && !bounce) {
+    bounce = true; 
 
-    char *str = "abcdefghi";
     char len = strlen(str);
-    
     smeBle.write(str,len);
       
     SerialUSB.print("Sending : "); 
@@ -47,16 +52,25 @@ void loop()
     SerialUSB.print("  Len : ");
     SerialUSB.print(len, HEX);
     SerialUSB.println(" ");
+    
     ledYellowOneLight(HIGH);
     referenceTime = millis();
-  } else if (isButtonTwoPressed()) {
+    
+  } else if (isButtonTwoPressed() && !bounce) {
     bounce = true;
-    BLE.write("B2 ");
+       
+    smeBle.writeChar(0xab);
+    SerialUSB.print("Sending : "); 
+    SerialUSB.println("0xab");
+    SerialUSB.print("  Len : ");
+    SerialUSB.println(1, HEX);
+        
     ledYellowTwoLight(HIGH);
     referenceTime = millis();
   }
 
-  if ((millis() - referenceTime) > 2000) {
+  if ((millis() - referenceTime) > 1000) {
+    bounce = false;
     referenceTime = millis();
     ledYellowOneLight(LOW);
     ledYellowTwoLight(LOW);
