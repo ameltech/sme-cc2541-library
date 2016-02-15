@@ -1,4 +1,4 @@
-# Arduino BLE Fox Library
+# SmartEverything Texas Instruments CC2541 BLE Arduino Library
 
 An [Arduino](http://arduino.cc) library for creating custom BLE peripherals with [CC2541](http://www.ti.com/product/CC2541).
 
