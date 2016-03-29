@@ -77,13 +77,13 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 
 ## Useful Links
- * [@Texas Instruments Home Page](http://processors.wiki.ti.com/index.php)'s 
-[BLE Smart Wiki](http://processors.wiki.ti.com/index.php/Category:BluetoothLE)
-   * Starting point for TI BLE support and documentation.
-   * 
-* [@LightBLue Home Page] (https://itunes.apple.com/it/app/lightblue/id639944780?mt=12)
- * Useful OSX Application  to test the RX  RX/TX Data.
- * 
-* [@B-BLE Home Page] (https://play.google.com/store/apps/details?id=com.billy.billylightblue)
- * Useful App to test the RX/TX Data from Android smartphones.
+* **[@Texas Instruments Home Page](http://processors.wiki.ti.com/index.php)'s 
+[BLE Smart Wiki](http://processors.wiki.ti.com/index.php/Category:BluetoothLE)**
+   Starting point for TI BLE support and documentation.
+   
+* **[@LightBLue Home Page] (https://itunes.apple.com/it/app/lightblue/id639944780?mt=12)**
+  Useful OSX Application  to test the RX  RX/TX Data.
+  
+* **[@B-BLE Home Page] (https://play.google.com/store/apps/details?id=com.billy.billylightblue)**
+  Useful App to test the RX/TX Data from Android smartphones.
 
