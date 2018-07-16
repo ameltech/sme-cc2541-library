@@ -5,7 +5,7 @@
 #######################################
 # Library (KEYWORD3)
 #######################################
-smeBle	     KEYWORD3
+smeBle	KEYWORD3
 
 #######################################
 # Datatypes (KEYWORD1)
@@ -14,11 +14,11 @@ smeBle	     KEYWORD3
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-begin	            KEYWORD2
-read                KEYWORD2
-available           KEYWORD2
-write               KEYWORD2
-writeChar           KEYWORD2
+begin	KEYWORD2
+read	KEYWORD2
+available	KEYWORD2
+write	KEYWORD2
+writeChar	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
